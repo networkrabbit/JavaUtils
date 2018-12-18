@@ -277,12 +277,8 @@ public class HttpClientUtil {
         if (null != json && json.size() > 0) {
 
             // 为httpPost设置封装好的请求参数
-            try {
-                StringEntity strEntity = new StringEntity(json.toString());
-                httpPost.setEntity(strEntity);
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
+            StringEntity strEntity = new StringEntity(json.toString(),"UTF-8");
+            httpPost.setEntity(strEntity);
         }
     }
 
